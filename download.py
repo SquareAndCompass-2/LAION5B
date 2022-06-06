@@ -34,7 +34,8 @@ spark = create_spark_session()
 
 print("create_spark_session")
 
-url_list = "s3://search-m5-users/viyjy/public_data/LAION/LAION5B/metadata/laion2B-en-joined/"
+#url_list = "s3://search-m5-users/viyjy/public_data/LAION/LAION5B/metadata/laion2B-en-joined/"
+url_list = "./cat.txt"
 output_dir = "s3://search-m5-users/viyjy/public_data/LAION/LAION5B/data/laion2B-en-joined/"
 
 print("start")
@@ -49,7 +50,7 @@ download(
     skip_reencode=True,
     output_folder=output_dir,
     output_format="webdataset",
-    input_format="parquet",
+    input_format="txt",
     url_col="URL",
     caption_col="TEXT",
     enable_wandb=True,
