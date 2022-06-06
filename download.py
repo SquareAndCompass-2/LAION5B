@@ -32,8 +32,12 @@ def create_spark_session():
 
 spark = create_spark_session()
 
+print("create_spark_session")
+
 url_list = "s3://search-m5-users/viyjy/public_data/LAION/LAION5B/metadata/laion2B-en-joined/"
 output_dir = "s3://search-m5-users/viyjy/public_data/LAION/LAION5B/data/laion2B-en-joined/"
+
+print("start")
 
 download(
     processes_count=1,
@@ -54,3 +58,5 @@ download(
     save_additional_columns=["NSFW","similarity","LICENSE"],
     oom_shard_count=6,
 )
+
+print("done")
