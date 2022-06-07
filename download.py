@@ -7,7 +7,7 @@ from pyspark import SparkConf, SparkContext
 
 def create_spark_session():
     # this must be a path that is available on all worker nodes
-    pex_file = "/mnt/var/lib/livy/img2dataset.pex"
+    pex_file = "/home/emr-notebook/img2dataset.pex"
     
     os.environ['PYSPARK_PYTHON'] = pex_file
     spark = (
